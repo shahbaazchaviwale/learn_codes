@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>open console</h1>
+
+<script>
+        function reverseInt(values){
+            var rev = '';
+          
+             while(values > 0){
+                    rev = rev +( values % 10);
+                    values = parseInt(values / 10);
+             }
+             return rev;
+        }
+        console.log(reverseInt(123));
+
+        var o = {p: 42, q: true};
+        var {p, q} = o;
+
+        console.log(p); // 42
+        console.log(q); // true
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>OPEN CONSOLE</h1>
+
+    <script>
+        (function(){
+            if(true){
+                var x = 10;
+                console.log("IN IF "+x);
+            }
+             console.log("OUT IF " +x);
+        }
+        )();
+         console.log('==========================');
+         var state;           // moved to the top
+        console.log("state " +state);
+        state = "ready";     // left in place
+         console.log('==========================');
+
+        function showState() {     // moved to the top (function declaration)
+                console.log("Ready");
+            }
+
+            var showState;            // moved to the top (variable declaration)
+
+            showState();
+
+            showState = function () {   // left in place (variable assignment)
+                console.log("Idle");
+            };
+    console.log('==========================');
+            var showState1 = function () {
+                    console.log("Idle");
+                };
+
+                function showState1() {
+                    console.log("Ready");
+                }
+
+                showState1();   
+
+                console.log( null);
+    console.log('==========================');
+                function showState2() {        // moved to the top (function declaration)
+                        console.log("Ready");
+                    }
+
+                    var showState;               // moved to the top (variable declaration)
+
+                    showState2 = function () {      // left in place (variable assignment)
+                        console.log("Idle");
+                    };
+
+                    showState2();
+
+
+                     console.log('============LET==============');
+
+                        
+                     (function(){                         
+                         if(true){
+                                let a = 10;
+                                console.log(a);
+                         }
+                         console.log(b);
+                     })();
+    </script>
+</body>
+</html>

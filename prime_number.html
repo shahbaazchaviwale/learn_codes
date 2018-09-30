@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>open console</h1>
+    <script>        
+        var  a = 5;
+        function prime(data){
+            var sumSingle = 0
+            for(var i = 1; i <= data; i++){
+                for(var j = 1; j<=data; j++){
+                        //console.log( "i=> "+i + " j=> " + j +"i % j => "+i%j);
+                        if( i%j == 0 && i % 1 == 0){
+                            console.log("============0000============");
+                            console.log("i=> " + i + " j=> " + j + "i % j => " + i % j);
+                        }else{
+                            console.log("============1111============");
+                            console.log("i=> " + i + " j=> " + j + "i % j => " + i % j);
+                        }
+                }
+            }    
+        }
+//console.log(prime(a));
+prime(a)
+</script>
+</body>
+</html>

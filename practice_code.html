@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>open console</h1>
+
+    <script>   
+        var myObject = {
+                foo: "bar", 
+                func: function () {
+                    var self = this;
+                    console.log("outer func:  this.foo = " + this.foo);         // bar
+                    console.log("outer func:  self.foo = " + self.foo);         // bar
+                    (function () {
+                        console.log("inner func:  this.foo = " + this.foo);     // undefined
+                        console.log("inner func:  self.foo = " + self.foo);     // bar
+                    }());
+                }
+            };
+            myObject.func();
+             let arr = [-1, 2, 3, -1, 11, 12];              
+            function largSum(arr){
+                let sum =0; 
+                let nextSum = 0;
+                for(let  i =0; i < arr.length; i++){
+                    nextSum += arr[i];
+                    if(sum < nextSum){
+                        sum = nextSum;
+                    }else if(nextSum < 0){
+                        nextSum = 0;
+                    }
+                }
+                return sum;
+            }
+            console.log(largSum(arr));
+            console.log("=============Inner FUnction===========================");
+            function incrementCount(){
+                var count = 0;
+                var count_add = function(){
+                    count += 1;
+                    return count;
+                }
+                return count_add;
+            }
+ var data = incrementCount();
+ console.log(data());
+    </script>
+</body>
+
+</html>

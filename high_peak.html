@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>open console for output</h1>
+    <script>
+    
+    // json code
+    comments = [
+        {
+            comment : "some",
+            subcomment : [
+                {
+                    comment : "some-1",
+                    subcomment : [{comment : "some of some"}]
+                },
+                {
+                    comment : "some-2",
+                    subcomment: [{ comment: "some of some-2" }]                    
+                }
+            ]
+        },{
+            comment : "many",
+            subcomment : [
+                {
+                    comment : "many-1",
+                    subcomment:[
+                        {
+                            comment :"many-1-1",                            
+                        },
+                        {
+                            comment :"many-1-2",                            
+                        }
+                    ]
+                }                
+            ]
+        }
+    ]
+
+        print(comments);
+
+            function print(data) {
+                var keys = Object.keys(data);
+                for (var item of keys) {
+                    var tmp = data[item];
+                    if (tmp === Object(tmp)) {
+                        print(data[item]);
+                    } else {
+                        console.log(data[item]);
+                    }
+                }
+            }
+    </script>
+</body>
+</html>

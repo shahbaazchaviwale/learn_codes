@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Person(age, weight) {
+            this.age = age;
+            this.weight = weight;
+        } 
+        
+        Person.prototype.getInfo = function(){
+            return this.age +" "+this.weight;
+        }
+
+        function Employee(age, weight, salary) {
+                this.age = age;
+                this.weight = weight;
+                this.salary = salary;
+            }
+
+            Employee.prototype.getInfo = function(){
+                return this.age +" "+ this.weight  + " " +this.salary
+            }
+
+            var person_obj = new Person(15, 60);
+            var employee_obj = new Employee(15, 60, 5000);
+
+            console.log(person_obj.getInfo());
+            console.log(employee_obj.getInfo());
+    </script>
+</body>
+</html>
