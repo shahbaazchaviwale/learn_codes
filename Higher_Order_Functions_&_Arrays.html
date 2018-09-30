@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>OPEN CONSOLE</h1>
+
+    <script>
+        const companies =  [
+            {"name": "Company One", "category": "finance", "start": 2021, "end": 2030},
+            {"name": "Company Two", "category": "retail", "start": 2010, "end": 2020},
+            {"name": "Company Three", "category": "auto", "start": 2001, "end": 2010},
+            {"name": "Company Four", "category": "retail", "start": 2031, "end": 2040},
+            {"name": "Company Five", "category": "technology", "start": 2041, "end": 2050},
+            {"name": "Company Six", "category": "finance", "start": 2051, "end": 2070},
+            {"name": "Company Seven", "category": "auto", "start": 2061, "end": 2080},
+            {"name": "Company Eight", "category": "technology", "start": 2071, "end": 2080},
+            {"name": "Company Nine", "category": "retail", "start": 2081, "end": 2090},
+            {"name": "Company Ten", "category": "finance", "start": 2091, "end": 3000},
+        ];
+
+        const age = [33,12,20,16,5,54,21,44,61,13,15,45,25,64,32];
+        const array = [33,12,20,16,5,54,21,44,61,13,15,45,25,64,32];
+
+
+        // ForEach Function
+        console.info('=============ForEach Function with OBJECT=============');
+        companies.forEach(function(getCompanyName){
+            console.log(getCompanyName.name);
+        });
+        console.info('=============FILTER WITH ARRAY=============');
+        const getAge = age.filter( ageValue => ageValue > 21);
+        console.log(getAge);
+
+        console.info('=============FILTER WITH OBJECT=============');
+
+        console.info('=============GET RETAILERS COMPANY=============');
+        const getRetailers = companies.filter( retailerCompanyCategory => retailerCompanyCategory.category === 'retail');
+        console.log('TOTAL RETAILS COMPANY=>', getRetailers.length);
+        console.log(getRetailers);
+
+        console.info('=============GET TECHNOLOGY COMPANY=============');
+        const getTechnology = companies.filter(technologyCompanyCategory => technologyCompanyCategory.category === 'technology');
+        console.log('TOTAL TECHNOLOGY COMPANY=>', getTechnology.length);
+        console.log(getTechnology);
+
+        console.info('=============GET companies which are started between 2010 to 2050 & counts=============');
+        const getYears = companies.filter(startYear => (startYear.start >= 2010 && startYear.start <= 2050));
+        console.log('TOTAL starts 2010 to 2050 COMPANY=>', getYears.length);
+        console.log(getYears);
+
+        console.info('=============GET companies which are 10 years old=============');
+        const tenYearOld = companies.filter(getTenYearsOld => (getTenYearsOld.end - getTenYearsOld.start > 10));
+        console.log('TOTAL 10 years old COMPANY=>', tenYearOld.length);
+        console.log(tenYearOld);
+
+        console.info('=============MAP WITH OBJECT=============');
+        console.info('=============get companies name start & end dates=============');
+        const CompanyNames = companies.map(getCompanyNames => `${getCompanyNames.name} => ${getCompanyNames.start} -> ${getCompanyNames.end}`);
+        console.log('TOTAL COMPANY NAMES=>', CompanyNames.length);
+        console.log(CompanyNames);
+
+        console.info('=============set age by 12 X 2 = 24 =============');
+        const ageByTwo = age.map( setAge => setAge * 2);
+        console.log('Actual Array==>', array);
+        console.log('by X 2========>',ageByTwo);
+
+
+        console.info('=============SORT WITH OBJECT=============');
+        console.info('=============SORT By start date ASC=============');
+        const sortStartDate = companies.sort(function(a, b) {
+            if(a.start > b.start){
+                return 1;
+            }else{
+                return -1;
+            }
+        });
+        console.log(sortStartDate);
+        console.info('============= SORT By category DESC =============');
+        const sortCategory = companies.sort( (a, b) => (a.category < b.category) ? 1 : -1 );
+        console.log(sortCategory);
+
+        console.info('============= SORT By category ASC =============');
+        const sortCategoryASC = companies.sort((a, b) => (a.category > b.category) ? 1 : -1);
+        console.log(sortCategoryASC);
+
+        console.info('=============SORT WITH ARRAY ASC=============');
+        const sortAgeASC = age.sort((a, b) => (a - b));
+         console.log('UNSorted Array====>', array);
+         console.log('Sorted Array====>', sortAgeASC);
+         console.info('=============SORT WITH ARRAY DESC=============');
+         const sortAgeDESC = age.sort((a, b) => (b - a));
+          console.log('UNSorted Array====>', array);
+         console.log('Sorted Array====>', sortAgeDESC);
+
+
+         console.info('=============REDUCER WITH ARRAY=============');
+         const ageSum = age.reduce((total, age) => total + age, 0);
+         console.log('AGE SUM =>', ageSum);
+
+         console.info('=============REDUCER WITH OBJECT=============');
+         const totalCompanyYears = companies.reduce( function (total, company) { 
+             return total + (company.end - company.start);
+         }, 0 );
+         console.log('COMPANY YEAR SUM =>', totalCompanyYears);
+
+
+    console.log('combine');
+    const combine = age
+        .map(age => age *2)
+        .filter(age => age => 40)
+        .sort((a, b) => a - b);
+
+    console.log(array);
+    console.log(combine);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
